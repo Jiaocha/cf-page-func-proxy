@@ -1,11 +1,11 @@
-export 默认 {
-  async fetch(request， env) {
-    const url = new URL(request。url);
-    if (url。pathname。startsWith('/')) {
-      url。hostname = cf-shsus。256709394。xyz;
-      const new_request = new Request(url， request);
+export default {
+  async fetch(request, env) {
+    let url = new URL(request.url);
+    if (url.pathname.startsWith('/')) {
+      url.hostname = 'cf-shsus.256709394.xyz'
+      let new_request = new Request(url, request);
       return fetch(new_request);
     }
-    return env。ASSETS。fetch(request);
-  }，
+    return env.ASSETS.fetch(request);
+  },
 };
